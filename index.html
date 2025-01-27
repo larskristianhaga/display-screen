@@ -12,6 +12,49 @@
             justify-content: center;
             height: 100vh;
         }
+
+        .first-container {
+            width: 40%;
+        }
+
+        .middle-container {
+            margin: 4px;
+            width: 30%
+        }
+
+        .last-container {
+            width: 30%;
+            margin: 4px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .yr-container{
+            height: 100%;
+        }
+
+        .ruter-iframe {
+            margin: 4px;
+            width: 100%;
+            height: 65%;
+            border-radius: 8px
+        }
+
+        .yr-iframe {
+            margin-bottom: 1rem;
+            height: 50%;
+            width: 100%;
+            border-radius: 8px
+        }
+
+        .calendar-iframe {
+            margin-bottom: 1rem;
+            height: 50%;
+            width: 100%;
+            border-radius: 8px
+        }
     </style>
     <script>
         function updateTime() {
@@ -21,6 +64,7 @@
         }
 
         const now = new Date();
+
         function updateWeekday() {
             const options = {year: 'numeric', month: 'long', day: 'numeric'};
             const dateTime = now.toLocaleDateString('nb-NO', options);
@@ -43,25 +87,23 @@
 </head>
 <body>
 <div class="container">
-    <div class="ruter-container">
-        <iframe src="https://mon.ruter.no/departures/59.9181008472934-10.742226849607649/N4Igrgzgpgwg9gGzAWwHYBkCGBPOYAuIAXAGaYLQA0IARnJgE4AmExA2qBPnAA4AKCTAGMoASRbsQAOQDKAJSIzu-QSKIBWABwAWAAwB2ENVkKlvAcKhEAbLoDMAJgcgAutSZRB2KEyWN8ACoAlshQxA7UABZBTB4YQahQrESgJorKFmq2js5EbNLyRACKYDhE+up6ALQAjJpVACJB0KhGBQolZRXVdVVmDHBVAOIMUCQtAARcAHRtaZ3Y5ZW6tfp9CS1zhQtLPWsyG1Cow6PjR1P4s8bbpYs1ug6advU1NVJVALKYAFZwDFxgI5bDq3Ij3R52ACctTeVQA0t9PBAAKesa4grrLWrQ9DfTA0BhgYHFUEVKHYz4-P4AoHokllcFPaE1SHvABSUAYqBomES3AYAHMoIQ6TtGeSWe8AKMQAnI-C09r0u4PJ4vVnwhgJAUQb7I4li1US9mc7m84V-IUipWGiEvd4AVQQCFNyh4ivmoPF0Ic7wAos7tRBCUxUR6bgyjfVfVUABtcTmoiYBA2krEsvr8-kAN2FrjpZhUlhsEMknoZNXU5LsawAEkiSNgGPmlYXMlYtHpDHkbV7dHp1MzYV9fv98IDWqK+wOXrCEUjUanI5DXmsanZdO8ZLymNmggBrTBLlUrmprvTvABCUH3+6S46PU+Xq9q6hWQzAzsimDAAuPYN0U811sKo5GwW8EknXtMXUNd9kOY4RjGSYZn-CpYNqep+kGJCzlQC4rmgxZ0OsCkR2pcdwwxYj1AwjNcXxQl-3uAdmQ1OEtVQHU9WY-tdC0bETS5Hk+UtPMnxVGdBKqGU5QVKDy0k-jmUdZ1XV4d0FIjJSBNhDlhPNfkrV41iqhjeMFQYJMUwkgCpJjAMECDEMwy06iAMhBxtG0KoayqesKEbZtbPQtdoX6HM8xcABfahUBQGhOQAeRIBooB4fwwFGZIagiEB8CCfAXWIEAYEwfBIimQ8EAmHhkQmX4aBoNomGafEXSYAIGF5CAeD+fAPjgDxkjYNwQCOdqfGIfBCSgKIYigLrhH3eAkDQYgyAoKBYs4DJVDECQ8jGjwvB8PwGECEIwiIXR5tiI50ASJJiGAWKQHi5BEoYFK0oyi6sueohNGoAqiuukAAiJdw2poDqltQXr+sG4b2DGibYam0hyCoEBog8JahBWxAUFaLGtuisbc3+II4FJhxoqAA"
-                style="margin: 4px; width: 40%; border-radius: 8px"
+    <div class="first-container">
+        <iframe class="ruter-iframe"
+                src="https://mon.ruter.no/departures/59.9181008472934-10.742226849607649/N4Igrgzgpgwg9gGzAWwHYBkCGBPOYAuIAXAGaYLQA0IARnJgE4AmExA2qBPnAA4AKCTAGMoASRbsQAOQDKAJSIzu-QSKIBWABwAWAAwB2ENVkKlvAcKhEAbLoDMAJgcgAutSZRB2KEyWN8ACoAlshQxA7UABZBTB4YQahQrESgJorKFmq2js5EbNLyRACKYDhE+up6ALQAjJpVACJB0KhGBQolZRXVdVVmDHBVAOIMUCQtAARcAHRtaZ3Y5ZW6tfp9CS1zhQtLPWsyG1Cow6PjR1P4s8bbpYs1ug6advU1NVJVALKYAFZwDFxgI5bDq3Ij3R52ACctTeVQA0t9PBAAKesa4grrLWrQ9DfTA0BhgYHFUEVKHYz4-P4AoHokllcFPaE1SHvABSUAYqBomES3AYAHMoIQ6TtGeSWe8AKMQAnI-C09r0u4PJ4vVnwhgJAUQb7I4li1US9mc7m84V-IUipWGiEvd4AVQQCFNyh4ivmoPF0Ic7wAos7tRBCUxUR6bgyjfVfVUABtcTmoiYBA2krEsvr8-kAN2FrjpZhUlhsEMknoZNXU5LsawAEkiSNgGPmlYXMlYtHpDHkbV7dHp1MzYV9fv98IDWqK+wOXrCEUjUanI5DXmsanZdO8ZLymNmggBrTBLlUrmprvTvABCUH3+6S46PU+Xq9q6hWQzAzsimDAAuPYN0U811sKo5GwW8EknXtMXUNd9kOY4RjGSYZn-CpYNqep+kGJCzlQC4rmgxZ0OsCkR2pcdwwxYj1AwjNcXxQl-3uAdmQ1OEtVQHU9WY-tdC0bETS5Hk+UtPMnxVGdBKqGU5QVKDy0k-jmUdZ1XV4d0FIjJSBNhDlhPNfkrV41iqhjeMFQYJMUwkgCpJjAMECDEMwy06iAMhBxtG0KoayqesKEbZtbPQtdoX6HM8xcABfahUBQGhOQAeRIBooB4fwwFGZIagiEB8CCfAXWIEAYEwfBIimQ8EAmHhkQmX4aBoNomGafEXSYAIGF5CAeD+fAPjgDxkjYNwQCOdqfGIfBCSgKIYigLrhH3eAkDQYgyAoKBYs4DJVDECQ8jGjwvB8PwGECEIwiIXR5tiI50ASJJiGAWKQHi5BEoYFK0oyi6sueohNGoAqiuukAAiJdw2poDqltQXr+sG4b2DGibYam0hyCoEBog8JahBWxAUFaLGtuisbc3+II4FJhxoqAA"
                 title="Ruter sanntidsinformasjon"></iframe>
     </div>
-    <div style="margin: 4px; width: 40% ">
+    <div class="middle-container">
         <div class="yr-container">
-            <iframe src="https://www.yr.no/nb/innhold/1-72837/card.html?mode=dark"
-                    style="margin-bottom: 1rem; height: 50%; width: 100%; border-radius: 8px"
+            <iframe class="yr-iframe" src="https://www.yr.no/nb/innhold/1-72837/card.html?mode=dark"
                     title="Yr værvarsel for Oslo"></iframe>
         </div>
         <div class="calendar-container">
-            <iframe sandbox="allow-scripts"
+            <iframe class="calendar-iframe" sandbox="allow-scripts"
                     src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&mode=AGENDA&showTabs=0&showCalendars=0&showTz=0&showDate=0&showNav=0&src=Zjk1MDFhOTE2ZjYxNjA4ZWEzZTUxODAzM2I3MmU3N2QzODM1MGJhM2RiMmFlZTQwMzllNzc1NjU2OGRhNTY0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E67C73"
-                    style="margin-bottom: 1rem; height: 50%; width: 100%; border-radius: 8px"
                     title="Google Calendar"></iframe>
         </div>
     </div>
-    <div style="margin: 4px; width: 20%; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-around;">
+    <div class="last-container">
         <div style="display: flex; justify-content: center; align-items: center; font-size: 6rem; height: 50%; width: 100%;">
             <p id="time"></p>
         </div>
