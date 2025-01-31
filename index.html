@@ -82,24 +82,24 @@
     </style>
     <script>
         function updateTime() {
-            const localTime = new Date().toLocaleTimeString();
+            var localTime = new Date().toLocaleTimeString();
             console.debug(localTime);
             document.getElementById('time').textContent = localTime;
         }
 
-        const now = new Date();
+        var now = new Date();
 
         function updateWeekday() {
-            const weekday = now.toLocaleDateString('nb-NO', {weekday: 'long'});
+            var weekday = now.toLocaleDateString('nb-NO', {weekday: 'long'});
             // Capitalize first letter
-            const weekdayCapitalized = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+            var weekdayCapitalized = weekday.charAt(0).toUpperCase() + weekday.slice(1);
             console.debug(weekdayCapitalized);
             document.getElementById('weekday').textContent = weekdayCapitalized;
         }
 
         function updateDate() {
-            const options = {year: 'numeric', month: '2-digit', day: 'numeric'};
-            const dateTime = now.toLocaleDateString('nb-NO', options);
+            var options = {year: 'numeric', month: '2-digit', day: 'numeric'};
+            var dateTime = now.toLocaleDateString('nb-NO', options);
             console.debug(dateTime);
             document.getElementById('date').textContent = dateTime;
         }
