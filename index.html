@@ -104,6 +104,10 @@
             document.getElementById('date').textContent = dateTime;
         }
 
+        console.log = function(message) {
+            document.getElementById('date').textContent = message;
+        };
+
         setInterval(updateTime, 1000);
         setInterval(updateWeekday, 1000);
         setInterval(updateDate, 1000);
