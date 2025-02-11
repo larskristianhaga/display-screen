@@ -83,22 +83,30 @@
     <script>
         function updateTime() {
             var localTime = new Date().toLocaleTimeString();
+            console.debug(localTime);
             document.getElementById('time').textContent = localTime;
         }
 
+        var now = new Date();
+
         function updateWeekday() {
-            var now = new Date();
             var weekday = now.toLocaleDateString('nb-NO', {weekday: 'long'});
+            // Capitalize first letter
             var weekdayCapitalized = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+            console.debug(weekdayCapitalized);
             document.getElementById('weekday').textContent = weekdayCapitalized;
         }
 
         function updateDate() {
-            var now = new Date();
             var options = {year: 'numeric', month: '2-digit', day: 'numeric'};
             var dateTime = now.toLocaleDateString('nb-NO', options);
+            console.debug(dateTime);
             document.getElementById('date').textContent = dateTime;
         }
+
+        console.log = function(message) {
+            document.getElementById('date').textContent = message;
+        };
 
         setInterval(updateTime, 1000);
         setInterval(updateWeekday, 1000);
@@ -122,9 +130,7 @@
         </iframe>
     </div>
     <div class="time-weekday-date">
-        <p id="time"></p>
-        <p id="weekday"></p>
-        <p id="date"></p>
+        <iframe src="time.php" width="200" height="50"></iframe>
     </div>
 </div>
 </body>
