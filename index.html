@@ -94,7 +94,9 @@
         }
 
         function updateWeekday() {
-            const weekday = new Date().toLocaleDateString('nb-NO', {weekday: 'long'});
+            const weekday = new Date().toLocaleDateString('nb-NO', {
+                weekday: 'long'
+            });
             // Capitalize first letter
             const weekdayCapitalized = weekday.charAt(0).toUpperCase() + weekday.slice(1);
             console.debug(weekdayCapitalized);
