@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
     <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="Display real-time information from Ruter, Yr and Google Calendar" name="description"/>
+    <meta content="https://github.com/larskristianhaga/display-screen" name="creator"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="none" name="robots"/>
     <title>Display screen</title>
     <style>
-        html {
+        body {
             background-color: black;
+            padding: 1rem;
+            overflow: hidden;
         }
 
         .corners {
@@ -21,6 +24,14 @@
             justify-content: space-between;
             column-gap: 2rem;
             overflow: hidden;
+        }
+
+        .double {
+            max-width: 40rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
         }
 
         .ruter-widget {
@@ -43,14 +54,6 @@
             height: 19rem;
         }
 
-        .double {
-            max-width: 40rem;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            row-gap: 2rem;
-        }
-
         .time-weekday-date {
             display: flex;
             flex-direction: column;
@@ -66,17 +69,12 @@
 
         #weekday {
             max-width: 20rem;
-            font-size: 5rem;
+            font-size: 4rem;
         }
 
         #date {
             max-width: 20rem;
             font-size: 3rem;
-        }
-
-        body {
-            padding: 1rem;
-            overflow: hidden;
         }
 
         iframe {
@@ -94,10 +92,8 @@
             document.getElementById('time').textContent = localTime;
         }
 
-        const now = new Date();
-
         function updateWeekday() {
-            const weekday = now.toLocaleDateString('nb-NO', {weekday: 'long'});
+            const weekday = new Date().toLocaleDateString('nb-NO', {weekday: 'long'});
             // Capitalize first letter
             const weekdayCapitalized = weekday.charAt(0).toUpperCase() + weekday.slice(1);
             console.debug(weekdayCapitalized);
@@ -105,8 +101,7 @@
         }
 
         function updateDate() {
-            const options = {year: 'numeric', month: '2-digit', day: 'numeric'};
-            const dateTime = now.toLocaleDateString('nb-NO', options);
+            const dateTime = new Date().toLocaleDateString('nb-NO', {year: 'numeric', month: '2-digit', day: 'numeric'});
             console.debug(dateTime);
             document.getElementById('date').textContent = dateTime;
         }
