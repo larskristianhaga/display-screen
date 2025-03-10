@@ -12,4 +12,4 @@ Viser blant annet:
 
 Skrevet i ren HTML, CSS og JavaScript, fordi frontend er overkomplisert nok som det er.
 
-Optimalisert for å kjøre på Samsung mid range TVer, fordi det er det jeg har. 
+Optimalisert for å kjøre på en Samsung TV som castes via Chromecast, det gir en screen resolution på 1280 x 720
