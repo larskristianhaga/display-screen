@@ -5,7 +5,6 @@ En enkel nettside som viser de viktigste tingene du trenger å vite når du skal
 Viser blant annet:
 * Neste kollektivtransport
 * Været
-* Kalender
 * Klokkeslett
 * Ukedag
 * Dato
